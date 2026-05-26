@@ -15,7 +15,7 @@ public class WorkWithFile {
         File file = new File(fromFileName);
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
-             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(toFileName, true))) {
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(toFileName, true))) {
 
             String line;
             while ((line = bufferedReader.readLine()) != null) {
