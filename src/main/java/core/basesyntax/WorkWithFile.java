@@ -33,15 +33,13 @@ public class WorkWithFile {
 
             int result = buy - supply;
 
-            bufferedWriter.write("supply" + "," + supply + "\n" + "buy" + "," + buy + "\n" + "result" + "," + result);
+            bufferedWriter.write("supply" + "," + supply + "\n" 
+            + "buy" + "," + buy 
+            + "\n" + "result" + "," + result);
         } catch (IOException e) {
             throw new RuntimeException("Can't read the file");
         }
 
     }
 
-    public static void main(String[] args) {
-        WorkWithFile file = new WorkWithFile();
-        file.getStatistic("banana.csv", "test1.csv");
-    }
 }
