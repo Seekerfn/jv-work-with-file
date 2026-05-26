@@ -31,7 +31,7 @@ public class WorkWithFile {
             }
             String string = stringBuilder.toString();
 
-            int result = buy - supply;
+            int result = supply - buy;
 
             bufferedWriter.write("supply" + "," + supply + "\n" 
             + "buy" + "," + buy 
