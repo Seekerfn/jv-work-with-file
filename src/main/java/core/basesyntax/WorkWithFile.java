@@ -15,7 +15,8 @@ public class WorkWithFile {
         int buy = 0;
         int supply = 0;
         File file = new File(fromFileName);
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file)); BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(toFileName, true))) {
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
+             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(toFileName, true))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] array = line.split(",");
@@ -34,10 +35,10 @@ public class WorkWithFile {
             int result = supply - buy;
 
             bufferedWriter.write("supply" + "," + supply + "\n" 
-            + "buy" + "," + buy 
-            + "\n" + "result" + "," + result);
+                + "buy" + "," + buy 
+                + "\n" + "result" + "," + result);
         } catch (IOException e) {
-            throw new RuntimeException("Can't read the file");
+            throw new RuntimeException("Can't read the file", e);
         }
 
     }
